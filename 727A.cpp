@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
 		cout<<"YES"<<"\n";
 		cout<<v.size()+1<<"\n"<<a<<" ";
 		for(it = v.end()-1 ; it >= v.begin() ; it--)  cout<<*it<<" ";
-			return 0;
+		return 0;
 	}
 	cout<<"NO";
 	return 0;
