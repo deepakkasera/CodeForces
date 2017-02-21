@@ -28,6 +28,7 @@ int main(int argc, char const *argv[])
 	         	else if(cntY == 0) str[i+pos] = 'Y';
 	         	else if(cntG == 0) str[i+pos] = 'G';
 	         }
+	         else if(c > 1) continue;
 	}
 	}
 	cntR=0,cntB=0,cntY=0,cntG=0;
