@@ -6,9 +6,10 @@ int main(int argc, char const *argv[])
 	cin >> n >> k >> x;
 	std::vector<int> v(n);
 	for(int i=0;i<n;i++) cin >>v[i];
-	sort(v.begin(),v.end());
     int i=0;
+    k%=1024;
     while(k--){
+    	sort(v.begin(),v.end());
     	while(i<n){
     		v[i] = v[i]^x;
     		i+=2;
@@ -16,6 +17,6 @@ int main(int argc, char const *argv[])
     	i=0;
     }
     //for(int i=0;i<n;i++) cout << v[i] << " ";
-    cout << *max_element(v.begin(),v.end()) <<" " << *min_element(v.begin(),v.end());
+    cout << *max_element(v.begin(),v.end()) <<" " << *min_element(v.begin(),v.end()) << endl ;
 	return 0;
 }
