@@ -1,31 +1,28 @@
 #include <bits/stdc++.h>
-#define ll long long 
 using namespace std;
 int main(int argc, char const *argv[])
 {
-	ll b1, q, l , m;
-	cin >> b1 >> q >> l >> m;
-	set <ll> s;
-	for (int i = 0; i < m; ++i)
-	{
-		ll x;
-		cin >> x;
+	long long b,q,l,m;
+	cin >> b >> q >> l >> m;
+	set<long long> s;
+	long long x;
+	for(int i=0;i<m;i++){
+		cin >> x ;
 		s.insert(x);
 	}
-	std::vector<ll>  gpTerms;
-		int cunt = 0;
-		while (abs(b1) <= l)
-		{
-			if (s.find(b1) == s.end())
-				gpTerms.push_back(b1);
-			b1 *= q;
-			cunt++;
-			if  (cunt > 400)
-				break;
+	int count=0,ans=0;
+	while(abs(b) <= l){
+		count++;
+		if(count > 50){
+			if(ans <= 1)
+				cout << ans << endl;
+			else cout << "inf\n";
+			return 0;
 		}
-			if (gpTerms.size() > 200)
-			cout << "inf";
-		else
-			cout << gpTerms.size();
+		if(s.find(b) == s.end())
+			ans++;
+		b *= q;
+	}
+	cout << ans << endl;
 	return 0;
 }
